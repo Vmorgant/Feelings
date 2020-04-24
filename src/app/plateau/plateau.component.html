@@ -1,18 +1,21 @@
-<h3 >{{situation.Detail}}</h3>
-<mat-grid-list cols="8" rowHeight="1:3" >
+<h3>{{situation.Detail}}</h3>
+<mat-grid-list cols="8" rowHeight="1:3">
   <mat-grid-tile *ngFor="let emotion of emotions">
     <mat-card class="card">
       <mat-card-header>
         <mat-card-title>{{emotion.Nom}}</mat-card-title>
         <ng-container *ngIf="emotion.Type==='Positive'; then positive else elseif" mat-card-avatar></ng-container>
         <ng-template #positive><em class="material-icons">mood</em></ng-template>
-        <ng-template #elseif><ng-container *ngIf="emotion.Type==='Negative'; then negative else neutre"></ng-container></ng-template>
+        <ng-template #elseif>
+          <ng-container *ngIf="emotion.Type==='Negative'; then negative else neutre"></ng-container>
+        </ng-template>
         <ng-template #negative><em class="material-icons">mood_bad</em></ng-template>
         <ng-template #neutre><em class="material-icons">sentiment_satisfied</em></ng-template>
       </mat-card-header>
-      <mat-card-content><img (click)="Choisir(emotion)" alt="{{emotion.Nom}}" mat-card-image src="{{'../assets/illustration/'+emotion.Nom+'.jpg'}}"></mat-card-content>
+      <mat-card-content><img (click)="Choisir(emotion)" alt="{{emotion.Nom}}" mat-card-image
+                             src="{{'../assets/illustration/'+emotion.Nom+'.jpg'}}"></mat-card-content>
       <mat-card-actions>
-          <button (click)="Retirer(emotion)" mat-button>Retirer</button>
+        <button (click)="Retirer(emotion)" color="warn" mat-button>Retirer</button>
       </mat-card-actions>
 
     </mat-card>

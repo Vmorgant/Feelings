@@ -9,8 +9,15 @@ import {Component} from '@angular/core';
 export class AppComponent {
   title = 'Feelings';
 
+  // tslint:disable-next-line:variable-name
+  constructor() {
+  }
+
+  /**
+   * Affiche la page contenant les règles du jeu
+   */
   AfficherRegles() {
-    alert('regle');
-    /*TODO afficher la page de règle*/
+    alert('regles');
   }
 }
+

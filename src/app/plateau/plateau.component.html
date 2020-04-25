@@ -25,7 +25,7 @@
       <mat-card-content>
 
         <img (click)="Choisir(emotion)" alt="{{emotion.Nom}}" mat-card-lg-image
-             src="{{'../assets/illustration/'+typeCarte+'/'+emotion.Nom+'.png'}}"></mat-card-content>
+             src="{{'/assets/illustration/'+typeCarte+'/'+emotion.Nom+'.png'}}"></mat-card-content>
       <mat-card-actions>
         <button (click)="Retirer(emotion)" color="warn" mat-button>Retirer</button>
       </mat-card-actions>

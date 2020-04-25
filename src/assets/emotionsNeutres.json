@@ -1,0 +1,30 @@
+[
+  {
+    "Nom": "Compassion",
+    "Type": "Neutre"
+  },
+  {
+    "Nom": "Déception",
+    "Type": "Neutre"
+  },
+  {
+    "Nom": "Gene",
+    "Type": "Neutre"
+  },
+  {
+    "Nom": "Méfiance",
+    "Type": "Neutre"
+  },
+  {
+    "Nom": "Résignation",
+    "Type": "Neutre"
+  },
+  {
+    "Nom": "Surprise",
+    "Type": "Neutre"
+  },
+  {
+    "Nom": "Serein",
+    "Type": "Neutre"
+  }
+]

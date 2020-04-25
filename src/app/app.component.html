@@ -1,9 +1,11 @@
 <mat-toolbar color="primary">
   <span>Feelings</span>
-  <button (click)="AfficherRegles()" mat-button>Règles du jeu</button>
-  <button mat-button>Mode Classe</button>
+  <span class="fill-remaining-space"></span>
+  <section class="action">
+    <button (click)="AfficherRegles()" mat-button>Règles du jeu</button>
+    <button mat-button>Mode Classe</button>
+  </section>
 </mat-toolbar>
 
 <app-plateau></app-plateau>
 <router-outlet></router-outlet>
-

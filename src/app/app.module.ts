@@ -12,7 +12,9 @@ import {PlateauComponent} from './plateau/plateau.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
-
+import {MatRadioModule} from '@angular/material/radio';
+import {FormsModule} from '@angular/forms';
+import {MatRippleModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -30,8 +32,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatMenuModule,
     MatIconModule,
     MatToolbarModule,
+    MatRadioModule,
+    FormsModule,
+    MatRippleModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,46 @@
+[
+  {
+    "Nom": "Amusement",
+    "Type": "Positive"
+  },
+  {
+    "Nom": "Confiance",
+    "Type": "Positive"
+  },
+  {
+    "Nom": "Emerveillement",
+    "Type": "Positive"
+  },
+  {
+    "Nom": "Excitation",
+    "Type": "Positive"
+  },
+  {
+    "Nom": "Fierté",
+    "Type": "Positive"
+  },
+  {
+    "Nom": "Joie",
+    "Type": "Positive"
+  },
+  {
+    "Nom": "Fierté",
+    "Type": "Positive"
+  },
+  {
+    "Nom": "Joie",
+    "Type": "Positive"
+  },
+  {
+    "Nom": "Motivation",
+    "Type": "Positive"
+  },
+  {
+    "Nom": "Reconnaissance",
+    "Type": "Positive"
+  },
+  {
+    "Nom": "Satisfaction",
+    "Type": "Positive"
+  }
+]

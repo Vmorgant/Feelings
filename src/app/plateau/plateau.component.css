@@ -1,4 +1,5 @@
-.card img {
-  max-width: 100em;
-  max-height: 100em;
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.mat-card-header {
+  justify-content: space-around;
 }

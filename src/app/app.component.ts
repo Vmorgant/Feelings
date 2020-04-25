@@ -5,11 +5,8 @@ import {Component} from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-
 export class AppComponent {
   title = 'Feelings';
-
-  // tslint:disable-next-line:variable-name
   constructor() {
   }
 

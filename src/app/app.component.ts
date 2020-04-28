@@ -9,12 +9,5 @@ export class AppComponent {
   title = 'Feelings';
   constructor() {
   }
-
-  /**
-   * Affiche la page contenant les règles du jeu
-   */
-  AfficherRegles() {
-    alert('regles');
-  }
 }
 

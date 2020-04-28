@@ -1,4 +1,4 @@
-<section style="margin-top: 3em">
+<section style="margin:3em">
   <label>Vous êtes plutôt ? </label>
   <mat-radio-group [(ngModel)]="typeCarte">
     <mat-radio-button (select)="true" value="Souris">
@@ -8,24 +8,23 @@
       Super Héros
     </mat-radio-button>
   </mat-radio-group>
+
+  <button (click)="NouvellePartie()" aria-label="Nouveau tirage" color="primary" mat-fab style="float: right">
+    <mat-icon>refresh</mat-icon>
+  </button>
 </section>
-<p>{{situation.Detail}}</p>
-<mat-grid-list cols="8" rowHeight="1:3">
+<section style="margin: 3em">
+  <p>Suite à la situation exposée par le <strong>Maître des émotions</strong>, sélectionnez parmis vos cartes <strong>Votes</strong>
+    le numéro qui correspond le mieux à la réaction émotionnelle que vous ressentez (ou que vous ressentiriez) dans la
+    situation évoquée.</p>
+</section>
+<mat-grid-list cols="4" gutterSize="1em" rowHeight="20em">
   <mat-grid-tile *ngFor="let emotion of emotions">
     <mat-card class="card">
-      <mat-card-header>
-        <ng-container *ngIf="emotion.Type==='Positive'; then positive else elseif"></ng-container>
-        <ng-template #positive><em class="material-icons">mood</em></ng-template>
-        <ng-template #elseif>
-          <ng-container *ngIf="emotion.Type==='Negative'; then negative else neutre"></ng-container>
-        </ng-template>
-        <ng-template #negative><em class="material-icons">mood_bad</em></ng-template>
-        <ng-template #neutre><em class="material-icons">sentiment_satisfied</em></ng-template>
-      </mat-card-header>
       <mat-card-content>
 
         <img (click)="Choisir(emotion)" alt="{{emotion.Nom}}" mat-card-lg-image
-             src="{{'assets/illustration/'+typeCarte+'/'+emotion.Nom+'.png'}}"></mat-card-content>
+             src="{{'./assets/illustration/'+typeCarte+'/'+emotion.Nom+'.png'}}"></mat-card-content>
       <mat-card-actions>
         <button (click)="Retirer(emotion)" color="warn" mat-button>Retirer</button>
       </mat-card-actions>
@@ -35,6 +34,4 @@
   </mat-grid-tile>
 </mat-grid-list>
 
-<button (click)="NouvellePartie()" aria-label="Nouveau tirage" color="primary" mat-fab>
-  <mat-icon>refresh</mat-icon>
-</button>
+

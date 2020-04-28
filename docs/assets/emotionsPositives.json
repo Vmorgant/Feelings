@@ -42,5 +42,17 @@
   {
     "Nom": "Satisfaction",
     "Type": "Positive"
+  },
+  {
+    "Nom": "Satisfaction",
+    "Type": "Positive"
+  },
+  {
+    "Nom": "Captivé",
+    "Type": "Positive"
+  },
+  {
+    "Nom": "Touchant",
+    "Type": "Positive"
   }
 ]

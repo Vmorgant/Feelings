@@ -44,8 +44,15 @@ export class PlateauComponent {
    * @param emotion L'émotion de la carte choisie
    */
   Retirer(emotion: Emotion) {
-    this.emotions.splice(this.emotions.indexOf(emotion), 1);
-    this.emotions.push(this.EmotionAvecType(emotion.Type));
+    let replace = false;
+    do {
+      const emo = this.EmotionAvecType(emotion.Type);
+      if (!(this.emotions.includes(emo))) {
+        this.emotions.splice(this.emotions.indexOf(emotion), 1, emo);
+        replace = true;
+      }
+    } while (!replace);
+
   }
 
   /**

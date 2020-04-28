@@ -32,14 +32,6 @@ export class PlateauComponent {
   }
 
   /**
-   * Action lors du choix de l'émotion
-   * @param emotion L'émotion de la carte choisie
-   */
-  Choisir(emotion: Emotion) {
-    alert(emotion.Nom);
-  }
-
-  /**
    * Retire une carte de l'ensemble et la remplace par une carte présentant le même type d'émotion
    * @param emotion L'émotion de la carte choisie
    */

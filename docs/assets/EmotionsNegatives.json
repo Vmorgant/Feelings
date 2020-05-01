@@ -8,5 +8,6 @@
   {"Nom": "Peur","Type":"Negative"},
   {"Nom": "Sidération","Type":"Negative"},
   {"Nom": "Tristesse","Type":"Negative"},
-  {"Nom": "Frustration","Type":"Negative"}
+  {"Nom": "Frustration","Type":"Negative"},
+  {"Nom": "Effroi","Type":"Negative"}
 ]

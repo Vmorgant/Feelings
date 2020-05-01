@@ -1,12 +1,12 @@
 [
   {"Nom": "Agacement","Type":"Negative"},
-  {"Nom": "Colère","Type":"Negative"},
-  {"Nom": "Dégout","Type":"Negative"},
+  {"Nom": "Colere","Type":"Negative"},
+  {"Nom": "Degout","Type":"Negative"},
   {"Nom": "Honte","Type":"Negative"},
-  {"Nom": "Inquiétude","Type":"Negative"},
-  {"Nom": "Mépris","Type":"Negative"},
+  {"Nom": "Inquietude","Type":"Negative"},
+  {"Nom": "Mepris", "Type":"Negative"},
   {"Nom": "Peur","Type":"Negative"},
-  {"Nom": "Sidération","Type":"Negative"},
+  {"Nom": "Sideration","Type":"Negative"},
   {"Nom": "Tristesse","Type":"Negative"},
   {"Nom": "Frustration","Type":"Negative"}
 ]

@@ -9,7 +9,8 @@
     </mat-radio-button>
   </mat-radio-group>
 
-  <button (click)="NouvellePartie()" aria-label="Nouveau tirage" color="primary" mat-fab style="float: right">
+  <button (click)="NouvellePartie()" color="primary" mat-fab style="float: right"  matTooltip="Renouveler toutes las cartes"
+          aria-label="Boutton à cliquer pour renouveler toutes las cartes">
     <mat-icon>refresh</mat-icon>
   </button>
 </section>
@@ -19,16 +20,15 @@
     situation évoquée.</p>
 </section>
 <mat-grid-list cols="4" gutterSize="1em" rowHeight="20em">
-  <mat-grid-tile *ngFor="let emotion of emotions">
-    <mat-card class="card">
+  <mat-grid-tile *ngFor="let emotion of emotions index as i">
+    <mat-card class="card" (click)="Retirer(emotion)" >
       <mat-card-content>
 
         <img alt="{{emotion.Nom}}" mat-card-lg-image
              src="{{'./assets/illustration/'+typeCarte+'/'+emotion.Nom+'.png'}}"></mat-card-content>
-      <mat-card-actions>
-        <button (click)="Retirer(emotion)" color="warn" mat-button>Retirer</button>
-      </mat-card-actions>
-
+      <mat-card-footer >
+        {{i+1}}
+      </mat-card-footer>
     </mat-card>
 
   </mat-grid-tile>

@@ -15,27 +15,29 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatRadioModule} from '@angular/material/radio';
 import {FormsModule} from '@angular/forms';
 import {MatRippleModule} from '@angular/material/core';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlateauComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatSidenavModule,
-    MatGridListModule,
-    MatCardModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatRadioModule,
-    FormsModule,
-    MatRippleModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatSidenavModule,
+        MatGridListModule,
+        MatCardModule,
+        MatButtonModule,
+        MatMenuModule,
+        MatIconModule,
+        MatToolbarModule,
+        MatRadioModule,
+        FormsModule,
+        MatRippleModule,
+        MatTooltipModule,
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

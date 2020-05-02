@@ -1,4 +1,4 @@
-<section style="margin:3em">
+<section style="margin-top:2em">
   <label>Vous êtes plutôt ? </label>
   <mat-radio-group [(ngModel)]="typeCarte">
     <mat-radio-button (select)="true" value="Souris">
@@ -14,17 +14,16 @@
     <mat-icon>refresh</mat-icon>
   </button>
 </section>
-<section style="margin: 3em">
+<section style="margin-top: 2em">
   <p>Suite à la situation exposée par le <strong>Maître des émotions</strong>, sélectionnez parmis vos cartes <strong>Votes</strong>
     le numéro qui correspond le mieux à la réaction émotionnelle que vous ressentez (ou que vous ressentiriez) dans la
     situation évoquée.</p>
 </section>
-<mat-grid-list cols="4" gutterSize="1em" rowHeight="20em">
+<mat-grid-list cols="4" gutterSize="1em" rowHeight="22em">
   <mat-grid-tile *ngFor="let emotion of emotions index as i">
     <mat-card class="card" (click)="Retirer(emotion)" >
       <mat-card-content>
-
-        <img alt="{{emotion.Nom}}" mat-card-lg-image
+        <img alt="{{emotion.Nom}}" mat-card-xl-image
              src="{{'./assets/illustration/'+typeCarte+'/'+emotion.Nom+'.png'}}"></mat-card-content>
       <mat-card-footer >
         {{i+1}}

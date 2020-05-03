@@ -24,10 +24,6 @@
     "Type": "Positive"
   },
   {
-    "Nom": "Motivation",
-    "Type": "Positive"
-  },
-  {
     "Nom": "Reconnaissance",
     "Type": "Positive"
   },
@@ -37,10 +33,6 @@
   },
   {
     "Nom": "Captive",
-    "Type": "Positive"
-  },
-  {
-    "Nom": "Touchant",
     "Type": "Positive"
   }
 ]

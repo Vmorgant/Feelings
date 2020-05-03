@@ -19,7 +19,7 @@
     le numéro qui correspond le mieux à la réaction émotionnelle que vous ressentez (ou que vous ressentiriez) dans la
     situation évoquée.</p>
 </section>
-<mat-grid-list cols="4" gutterSize="1em" rowHeight="22em">
+<mat-grid-list cols="{{nbColonnes}}" gutterSize="1em" rowHeight="22em">
   <mat-grid-tile *ngFor="let emotion of emotions index as i">
     <mat-card class="card" (click)="Retirer(emotion)" >
       <mat-card-content>

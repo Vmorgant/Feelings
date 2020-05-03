@@ -5,7 +5,6 @@ import ListeEmotionPositives from '../../assets/emotionsPositives.json';
 import ListeEmotionNegatives from '../../assets/emotionsNegatives.json';
 import ListeEmotionNeutres from '../../assets/emotionsNeutres.json';
 import {Situation} from '../situation';
-
 @Component({
   selector: 'app-plateau',
   templateUrl: './plateau.component.html',
@@ -22,8 +21,10 @@ export class PlateauComponent {
   emotions: Array<Emotion> = new Array<Emotion>();
   situation: Situation;
   typeCarte = 'Souris';
-
+  nbColonnes;
+  largeurEcran = window.innerWidth;
   constructor() {
+    this.SetNombreColonne();
     this.Situations = ListeSituation;
     this.EmotionsPositives = ListeEmotionPositives;
     this.EmotionsNegatives = ListeEmotionNegatives;
@@ -31,6 +32,20 @@ export class PlateauComponent {
     this.NouvellePartie();
   }
 
+  /**
+   * Ajuste le nombre de colonne en fonction de la largeur de l'écran.
+   */
+  SetNombreColonne(){
+    if (this.largeurEcran > 768){
+      this.nbColonnes = 4;
+    }
+    else if (this.largeurEcran > 420){
+      this.nbColonnes = 2;
+    }
+    else {
+      this.nbColonnes = 1;
+    }
+  }
   /**
    * Retire une carte de l'ensemble et la remplace par une carte présentant le même type d'émotion
    * @param emotion L'émotion de la carte choisie

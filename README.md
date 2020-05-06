@@ -1,27 +1,21 @@
-# Feelings
+# Présentation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+Le jeu est une adaptation du jeu Feelings créé par Vincent Bidault et Jean-Louis Roubira édité par Act In Games. 
+L’adaptation a été réalisée par des enseignants du collectif [Nous Sommes Le Système](www.noussommeslesysteme.org), collectif fondé par Damien Roquel, Steeve Evers et Perrine Baudimont qui vise à former les enseignants à l’utilisation d’outils d’intelligence collective au service des apprentissages en classe .
+Les cartes de cette version ont été créées par Manuella Chainot-Bataille et Aurélie Polachowski. L’application a été codée par Victor Morgant étudiant à l’Ensim.
 
-## Development server
+Le jeu est disponible sur [Github Page](https://vmorgant.github.io/Feelings/).
+#Developpement
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Ce projet utilise [Angular 9](https://angular.io/) et [Angular Material](https://material.angular.io/) une version bureau est actuellement en cours de développement et utilisera [Electron](https://www.electronjs.org/).
 
-## Code scaffolding
+##Serveur de développement
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Exécuter la commande `ng serve` pour lancer le serveur. Rendez vous ensuite sur `http://localhost:4200/`. L'application se mettra automatiquement à jour en cas de modification.
 
-## Build
+##Production de l'application pour un déploiement sur Github pages 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Utilisez la commande `ng build --prod --output-path docs --base-href /Feelings/`.
+La version produite apparaitra dans le dossier docs de votre projet.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

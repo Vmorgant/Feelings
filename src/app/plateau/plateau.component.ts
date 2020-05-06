@@ -109,10 +109,11 @@ export class PlateauComponent {
     }
     return emotionAleat;
   }
-
+  /**
+   * Permet de lancer une partie en supprimant les cartes du tableau et en tirant 8 nouvelles émotions
+   */
   NouvellePartie() {
     this.emotions.splice(0, 7);
-    this.situation = this.SituationAleatoire(this.Situations);
     this.EmotionsAleatoires();
   }
 }

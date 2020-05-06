@@ -1,14 +1,6 @@
-.mat-card-header {
-  justify-content: space-around;
-}
-.mat-card{
-  border-radius: 10%;
-}
-.mat-radio-button {
-  margin-right: 0.5em;
-}
 .mat-card-footer{
   margin-top: 3%;
   margin-left: 50%;
-  font-family: "Comic Sans MS", serif;
+  font-weight: bold;
+//color: white;
 }

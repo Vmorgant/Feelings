@@ -2,3 +2,17 @@
 .fill-remaining-space {
   flex: 1 1 auto;
 }
+.mat-card-header {
+  justify-content: space-around;
+}
+.mat-card{
+  border-radius: 10%;
+  //background: #3f51b5;
+}
+.mat-radio-button {
+  margin-right: 0.5em;
+}
+.mat-card-xl-image {
+  max-width: 15em;
+  max-height: 17em;
+}

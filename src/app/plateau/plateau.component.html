@@ -22,9 +22,9 @@
 <mat-grid-list cols="{{nbColonnes}}" gutterSize="1em" rowHeight="22em">
   <mat-grid-tile *ngFor="let emotion of emotions index as i">
     <mat-card class="card" (click)="Retirer(emotion)" >
-      <mat-card-content>
+      <mat-card-content mat-ripple>
         <img alt="{{emotion.Nom}}" mat-card-xl-image
-             src="{{'./assets/illustration/'+typeCarte+'/'+emotion.Nom+'.png'}}"></mat-card-content>
+             src="{{'./assets/illustration/'+typeCarte+'/'+emotion.Nom+'.png'}}" matTooltip="Changer cette carte" aria-label="Boutton à cliquer pour changer la carte">></mat-card-content>
       <mat-card-footer >
         {{i+1}}
       </mat-card-footer>

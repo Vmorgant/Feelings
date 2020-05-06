@@ -5,15 +5,15 @@ L’adaptation a été réalisée par des enseignants du collectif [Nous Sommes 
 Les cartes de cette version ont été créées par Manuella Chainot-Bataille et Aurélie Polachowski. L’application a été codée par Victor Morgant étudiant à l’Ensim.
 
 Le jeu est disponible sur [Github Page](https://vmorgant.github.io/Feelings/).
-#Developpement
+# Developpement
 
 Ce projet utilise [Angular 9](https://angular.io/) et [Angular Material](https://material.angular.io/) une version bureau est actuellement en cours de développement et utilisera [Electron](https://www.electronjs.org/).
 
-##Serveur de développement
+## Serveur de développement
 
 Exécuter la commande `ng serve` pour lancer le serveur. Rendez vous ensuite sur `http://localhost:4200/`. L'application se mettra automatiquement à jour en cas de modification.
 
-##Production de l'application pour un déploiement sur Github pages 
+## Production de l'application pour un déploiement sur Github pages 
 
 Utilisez la commande `ng build --prod --output-path docs --base-href /Feelings/`.
 La version produite apparaitra dans le dossier docs de votre projet.

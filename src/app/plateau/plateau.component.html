@@ -1,30 +1,9 @@
-<section style="margin-top:2em">
-  <label>Vous êtes plutôt ? </label>
-  <mat-radio-group [(ngModel)]="typeCarte">
-    <mat-radio-button (select)="true" value="Souris">
-      Souris
-    </mat-radio-button>
-    <mat-radio-button value="SuperHeros">
-      Super Héros
-    </mat-radio-button>
-  </mat-radio-group>
-
-  <button (click)="NouvellePartie()" color="primary" mat-fab style="float: right"  matTooltip="Renouveler toutes las cartes"
-          aria-label="Boutton à cliquer pour renouveler toutes las cartes">
-    <mat-icon>refresh</mat-icon>
-  </button>
-</section>
-<section style="margin-top: 2em" >
-  <p>Suite à la situation exposée par le <strong>Maître des émotions</strong>, sélectionnez parmis vos cartes <strong>Votes</strong>
-    le numéro qui correspond le mieux à la réaction émotionnelle que vous ressentez (ou que vous ressentiriez) dans la
-    situation évoquée.</p>
-</section>
-<mat-grid-list cols="{{nbColonnes}}" gutterSize="1em" rowHeight="22em">
+<mat-grid-list cols="{{nbColonnes}}" gutterSize="1em" rowHeight="25em">
   <mat-grid-tile *ngFor="let emotion of emotions index as i">
     <mat-card class="card mat-elevation-z8" (click)="Retirer(emotion)" >
       <mat-card-content mat-ripple>
         <img alt="{{emotion.Nom}}" mat-card-xl-image
-             src="{{'./assets/illustration/'+typeCarte+'/'+emotion.Nom+'.png'}}" matTooltip="Changer cette carte" aria-label="Boutton à cliquer pour changer la carte"></mat-card-content>
+             src="{{'./assets/illustration/'+typeCarte+'/'+emotion.Nom+'.png'}}" matTooltip="Changer cette carte" aria-label="Bouton à cliquer pour changer la carte"></mat-card-content>
       <mat-card-footer >
         {{i+1}}
       </mat-card-footer>
@@ -33,4 +12,7 @@
   </mat-grid-tile>
 </mat-grid-list>
 
-
+<button (click)="NouvellePartie()" color="primary" mat-fab style="margin-left: 50%" matTooltip="Renouveler toutes las cartes"
+        aria-label="Bouton à cliquer pour renouveler toutes las cartes">
+  <mat-icon>refresh</mat-icon>
+</button>

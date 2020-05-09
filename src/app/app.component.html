@@ -1,7 +1,21 @@
 <mat-toolbar  color="primary">
-  <span>Feelings</span>
+  <span style="margin-right: 1em ">Feelings </span>
+  <span></span>
+  <mat-slide-toggle
+    [(ngModel)]="modeDemonstration">
+    Mode Démonstration
+  </mat-slide-toggle>
   <span class="fill-remaining-space"></span>
+  <label style="margin-right: 1em"> Vous êtes plutôt ? </label>
+  <mat-radio-group [(ngModel)]="typeCarte">
+    <mat-radio-button (select)="true" value="Souris">
+      Souris
+    </mat-radio-button>
+    <mat-radio-button value="SuperHeros">
+      Super Héros
+    </mat-radio-button>
+  </mat-radio-group>
 </mat-toolbar>
 
-<app-plateau></app-plateau>
+<app-plateau [modeDemonstration]="modeDemonstration" [typeCarte]="typeCarte"></app-plateau>
 <router-outlet></router-outlet>

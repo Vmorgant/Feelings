@@ -16,6 +16,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import {FormsModule} from '@angular/forms';
 import {MatRippleModule} from '@angular/material/core';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
         FormsModule,
         MatRippleModule,
         MatTooltipModule,
+        MatSlideToggleModule,
+        MatSnackBarModule
     ],
   bootstrap: [AppComponent]
 })

@@ -24,8 +24,10 @@ export class PlateauComponent implements OnInit{
   EmotionsNeutres: Emotion[];
   emotions: Array<Emotion> = new Array<Emotion>();
   situation: Situation;
-  nbColonnes;
+  // Pour responsive
+  nbColonnes: number;
   largeurEcran = window.innerWidth;
+
   constructor(private snackBar: MatSnackBar) {}
   ngOnInit(){
     this.SetNombreColonne();
@@ -34,12 +36,18 @@ export class PlateauComponent implements OnInit{
     this.EmotionsNegatives = ListeEmotionNegatives;
     this.EmotionsNeutres = ListeEmotionNeutres;
     this.NouvellePartie();
+    // this.breakpoint = (window.innerWidth <= 400) ? 1 : 6;
   }
 
   /**
+   * Responsive
    * Ajuste le nombre de colonne en fonction de la largeur de l'écran.
+   * @param event
    */
-  SetNombreColonne(){
+  SetNombreColonne(event = null){
+    if (event){
+      this.largeurEcran = event.target.innerWidth;
+    }
     if (this.largeurEcran > 768){
       this.nbColonnes = 4;
     }
@@ -50,6 +58,7 @@ export class PlateauComponent implements OnInit{
       this.nbColonnes = 1;
     }
   }
+
   /**
    * Retire une carte de l'ensemble et la remplace par une carte présentant le même type d'émotion
    * @param emotion L'émotion de la carte choisie

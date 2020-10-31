@@ -1,4 +1,4 @@
-<mat-grid-list cols="{{nbColonnes}}" (window:resize)="onResize($event)" gutterSize="1em" rowHeight="25em">
+<mat-grid-list cols="{{nbColonnes}}" (window:resize)="SetNombreColonne($event)" gutterSize="1em" rowHeight="25em">
   <mat-grid-tile *ngFor="let emotion of emotions index as i">
     <mat-card class="card mat-elevation-z8" (click)="Retirer(emotion)" >
       <mat-card-content mat-ripple>

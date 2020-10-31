@@ -1,0 +1,10 @@
+[
+  {"Nom": "Fierte","Type":"Positive"},
+  {"Nom": "Satisfaction","Type":"Positive"},
+  {"Nom": "Joie","Type":"Positive"},
+  {"Nom": "Surprise","Type":"Neutre"},
+  {"Nom": "Gene","Type":"Neutre"},
+  {"Nom": "Tristesse", "Type":"Negative"},
+  {"Nom": "Peur","Type":"Negative"},
+  {"Nom": "Colere","Type":"Negative"}
+]

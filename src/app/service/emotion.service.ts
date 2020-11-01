@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {Emotion} from '../emotion';
 import ListeEmotionPositives from '../../assets/emotionsPositives.json';
 import ListeEmotionNegatives from '../../assets/emotionsNegatives.json';
-import ListeEmotionDecouverte from '../../assets/emotionDecouvertes.json';
 import ListeEmotionNeutres from '../../assets/emotionsNeutres.json';
 @Injectable({
   providedIn: 'root'
@@ -57,10 +56,4 @@ export class EmotionService {
     return emotionAleat;
   }
 
-  /**
-   * Selection de 8 émotions aléatoires différentes de niveau débutant à présenter au joueur
-   */
- EmotionsDebutants() {
-    this.emotions = ListeEmotionDecouverte;
-  }
 }

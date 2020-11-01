@@ -34,10 +34,6 @@ export class PlateauComponent implements OnInit{
    * @param emotion L'émotion de la carte choisie
    */
   Retirer(emotion: Emotion) {
-    if (this.modeDemonstration === true) {
-      this.openSnackBar('Cette fonctionnalité n\'est pas disponible en mode démonstration', ' ');
-    }
-    else {
         let replace = false;
         do {
           const emo = this.emotionService.EmotionAvecType(emotion.Type);
@@ -46,7 +42,6 @@ export class PlateauComponent implements OnInit{
             replace = true;
           }
         } while (!replace);
-    }
   }
 
   /**
@@ -54,13 +49,7 @@ export class PlateauComponent implements OnInit{
    */
   NouvellePartie() {
     this.emotionService.emotions.splice(0, 7);
-    if (this.modeDemonstration === true) {
-      this.emotionService.EmotionsDebutants();
-    }
-    else
-    {
-      this.emotionService.EmotionsAleatoires();
-    }
+    this.emotionService.EmotionsAleatoires();
   }
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {duration : 4000});

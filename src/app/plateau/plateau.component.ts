@@ -4,6 +4,7 @@ import ListeSituation from '../../assets/situation.json';
 import {Situation} from '../situation';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {EmotionService} from '../service/emotion.service';
+import {SituationService} from "../service/situation.service";
 @Component({
   selector: 'app-plateau',
   templateUrl: './plateau.component.html',
@@ -15,16 +16,13 @@ export class PlateauComponent implements OnInit{
   /***
    * Représentation du plateau de jeu
    */
-  Situations: Situation[];
-  situation: Situation;
   // Pour responsive
   nbColonnes: number;
   largeurEcran = window.innerWidth;
 
-  constructor(private snackBar: MatSnackBar, private emotionService: EmotionService) {}
+  constructor(private snackBar: MatSnackBar, public emotionService: EmotionService, public situationService: SituationService) {}
   ngOnInit(){
     this.SetNombreColonne();
-    this.Situations = ListeSituation;
 
     this.NouvellePartie();
     // this.breakpoint = (window.innerWidth <= 400) ? 1 : 6;
@@ -68,14 +66,6 @@ export class PlateauComponent implements OnInit{
           }
         } while (!replace);
     }
-  }
-
-  /**
-   * Renvoie une situation aléatoire
-   * @param Situations l'emsemble des situations contenue dans le json emotionsPositives.json
-   */
-  SituationAleatoire(Situations) {
-    return Situations[Math.floor(Math.random() * Situation.length)];
   }
 
   /**

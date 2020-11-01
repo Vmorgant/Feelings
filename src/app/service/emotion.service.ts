@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {Emotion} from '../emotion';
-import ListeEmotionDecouverte from '../../assets/emotionDecouvertes.json';
 import ListeEmotionPositives from '../../assets/emotionsPositives.json';
 import ListeEmotionNegatives from '../../assets/emotionsNegatives.json';
 import ListeEmotionDecouverte from '../../assets/emotionDecouvertes.json';

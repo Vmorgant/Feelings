@@ -4,7 +4,8 @@ import ListeSituation from '../../assets/situation.json';
 import {Situation} from '../situation';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {EmotionService} from '../service/emotion.service';
-import {SituationService} from "../service/situation.service";
+import {SituationService} from '../service/situation.service';
+import {ResponsiveService} from '../service/responsive.service';
 @Component({
   selector: 'app-plateau',
   templateUrl: './plateau.component.html',
@@ -16,36 +17,16 @@ export class PlateauComponent implements OnInit{
   /***
    * Représentation du plateau de jeu
    */
-  // Pour responsive
-  nbColonnes: number;
-  largeurEcran = window.innerWidth;
 
-  constructor(private snackBar: MatSnackBar, public emotionService: EmotionService, public situationService: SituationService) {}
+  constructor(private snackBar: MatSnackBar,
+              public emotionService: EmotionService,
+              public situationService: SituationService,
+              public responsiveService: ResponsiveService) {}
   ngOnInit(){
-    this.SetNombreColonne();
+    this.responsiveService.SetNombreColonne();
 
     this.NouvellePartie();
     // this.breakpoint = (window.innerWidth <= 400) ? 1 : 6;
-  }
-
-  /**
-   * Responsive
-   * Ajuste le nombre de colonne en fonction de la largeur de l'écran.
-   * @param event
-   */
-  SetNombreColonne(event = null){
-    if (event){
-      this.largeurEcran = event.target.innerWidth;
-    }
-    if (this.largeurEcran > 768){
-      this.nbColonnes = 4;
-    }
-    else if (this.largeurEcran > 420){
-      this.nbColonnes = 2;
-    }
-    else {
-      this.nbColonnes = 1;
-    }
   }
 
   /**

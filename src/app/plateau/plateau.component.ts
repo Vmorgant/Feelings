@@ -1,12 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Emotion} from '../emotion';
 import ListeSituation from '../../assets/situation.json';
-import ListeEmotionPositives from '../../assets/emotionsPositives.json';
-import ListeEmotionNegatives from '../../assets/emotionsNegatives.json';
-import ListeEmotionDecouverte from '../../assets/emotionDecouvertes.json';
-import ListeEmotionNeutres from '../../assets/emotionsNeutres.json';
 import {Situation} from '../situation';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {EmotionService} from '../service/emotion.service';
 @Component({
   selector: 'app-plateau',
   templateUrl: './plateau.component.html',
@@ -19,22 +16,16 @@ export class PlateauComponent implements OnInit{
    * Représentation du plateau de jeu
    */
   Situations: Situation[];
-  EmotionsPositives: Emotion[];
-  EmotionsNegatives: Emotion[];
-  EmotionsNeutres: Emotion[];
-  emotions: Array<Emotion> = new Array<Emotion>();
   situation: Situation;
   // Pour responsive
   nbColonnes: number;
   largeurEcran = window.innerWidth;
 
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(private snackBar: MatSnackBar, private emotionService: EmotionService) {}
   ngOnInit(){
     this.SetNombreColonne();
     this.Situations = ListeSituation;
-    this.EmotionsPositives = ListeEmotionPositives;
-    this.EmotionsNegatives = ListeEmotionNegatives;
-    this.EmotionsNeutres = ListeEmotionNeutres;
+
     this.NouvellePartie();
     // this.breakpoint = (window.innerWidth <= 400) ? 1 : 6;
   }
@@ -70,9 +61,9 @@ export class PlateauComponent implements OnInit{
     else {
         let replace = false;
         do {
-          const emo = this.EmotionAvecType(emotion.Type);
-          if (!(this.emotions.includes(emo))) {
-            this.emotions.splice(this.emotions.indexOf(emotion), 1, emo);
+          const emo = this.emotionService.EmotionAvecType(emotion.Type);
+          if (!(this.emotionService.emotions.includes(emo))) {
+            this.emotionService.emotions.splice(this.emotionService.emotions.indexOf(emotion), 1, emo);
             replace = true;
           }
         } while (!replace);
@@ -86,63 +77,18 @@ export class PlateauComponent implements OnInit{
   SituationAleatoire(Situations) {
     return Situations[Math.floor(Math.random() * Situation.length)];
   }
-  /**
-   * Selection de 8 émotions aléatoires différentes à présenter au joueur
-   */
-  EmotionsAleatoires() {
-    do {
-      const emotionAleat: Emotion = this.EmotionAvecType('Positive');
-      if (this.emotions.find(emo => emo.Nom === emotionAleat.Nom) === undefined) {
-        this.emotions.push(emotionAleat);
-      }
-    } while (this.emotions.length < 3);
-    do {
-      const emotionAleat: Emotion = this.EmotionAvecType('Negative');
-      if (this.emotions.find(emo => emo.Nom === emotionAleat.Nom) === undefined) {
-        this.emotions.push(emotionAleat);
-      }
-    } while (this.emotions.length < 6);
-    do {
-      const emotionAleat: Emotion = this.EmotionAvecType('Neutre');
-      if (this.emotions.find(emo => emo.Nom === emotionAleat.Nom) === undefined) {
-        this.emotions.push(emotionAleat);
-      }
-    } while (this.emotions.length < 8);
-  }
 
-  /**
-   * Renvoie d'une émotion aléatoire selon le type donné en paramètre
-   * @param Type le type d'émotion souhaité
-   */
-  EmotionAvecType(Type: string): Emotion {
-    let emotionAleat: Emotion;
-    if (Type === 'Positive') {
-      emotionAleat = this.EmotionsPositives[Math.floor(Math.random() * this.EmotionsPositives.length)];
-    } else if (Type === 'Negative') {
-      emotionAleat = this.EmotionsNegatives[Math.floor(Math.random() * this.EmotionsNegatives.length)];
-    } else {
-      emotionAleat = this.EmotionsNeutres[Math.floor(Math.random() * this.EmotionsNeutres.length)];
-    }
-    return emotionAleat;
-  }
-
-  /**
-   * Selection de 8 émotions aléatoires différentes de niveau débutant à présenter au joueur
-   */
-  EmotionsDebutants() {
-    this.emotions = ListeEmotionDecouverte;
-  }
   /**
    * Permet de lancer une partie en supprimant les cartes du tableau et en tirant 8 nouvelles émotions
    */
   NouvellePartie() {
-    this.emotions.splice(0, 7);
+    this.emotionService.emotions.splice(0, 7);
     if (this.modeDemonstration === true) {
-      this.EmotionsDebutants();
+      this.emotionService.EmotionsDebutants();
     }
     else
     {
-      this.EmotionsAleatoires();
+      this.emotionService.EmotionsAleatoires();
     }
   }
   openSnackBar(message: string, action: string) {

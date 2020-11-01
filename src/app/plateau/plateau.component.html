@@ -1,5 +1,5 @@
 <mat-grid-list cols="{{nbColonnes}}" (window:resize)="SetNombreColonne($event)" gutterSize="1em" rowHeight="25em">
-  <mat-grid-tile *ngFor="let emotion of emotions index as i">
+  <mat-grid-tile *ngFor="let emotion of emotionService.emotions index as i">
     <mat-card class="card mat-elevation-z8" (click)="Retirer(emotion)" >
       <mat-card-content mat-ripple>
         <img alt="{{emotion.Nom}}" mat-card-xl-image

@@ -1,6 +1,7 @@
 <mat-toolbar  color="primary">
   <span style="margin-right: 1em ">{{title}} </span>
   <span></span>
+  <button mat-raised-button (click)="afficherRegles()">Règles</button>
   <span class="fill-remaining-space"></span>
   <label style="margin-right: 1em"> Vous êtes plutôt ? </label>
   <mat-radio-group [(ngModel)]="typeCarte">
@@ -15,3 +16,4 @@
 
 <app-plateau [typeCarte]="typeCarte"></app-plateau>
 <router-outlet></router-outlet>
+

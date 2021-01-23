@@ -1,0 +1,44 @@
+<h1 mat-dialog-title> Règles d'utilisations </h1>
+<mat-expansion-panel >
+  <mat-expansion-panel-header>
+    <mat-panel-title>Actions :</mat-panel-title>
+  </mat-expansion-panel-header>
+  <p>Chaque carte représente une émotion que le joueur peut ressentir vis à vis de la situation</p>
+  <p>Cliquer sur une carte pour la changer par une émotion de même type</p>
+  <p>Le bouton raffraichir <mat-icon>refresh</mat-icon> permet de réinitialiser toutes les cartes </p>
+</mat-expansion-panel>
+
+<mat-expansion-panel >
+  <mat-expansion-panel-header>
+    <mat-panel-title>Les émotions positives sont :</mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-grid-list cols="3" gutterSize="0">
+      <mat-grid-tile
+        *ngFor="let emotion of emotionService.EmotionsPositives">
+        <p>{{emotion.Nom}}</p></mat-grid-tile>
+  </mat-grid-list>
+</mat-expansion-panel>
+
+<mat-expansion-panel >
+  <mat-expansion-panel-header>
+    <mat-panel-title>Les émotions négatives sont :</mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-grid-list cols="3" gutterSize="0">
+    <mat-grid-tile
+      *ngFor="let emotion of emotionService.EmotionsNegatives">
+      <p>{{emotion.Nom}}</p></mat-grid-tile>
+  </mat-grid-list>
+</mat-expansion-panel>
+
+<mat-expansion-panel >
+  <mat-expansion-panel-header>
+    <mat-panel-title>Les émotions neutres sont :</mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-grid-list cols="3" gutterSize="0">
+    <mat-grid-tile
+      *ngFor="let emotion of emotionService.EmotionsNeutres">
+      <p>{{emotion.Nom}}</p></mat-grid-tile>
+  </mat-grid-list>
+</mat-expansion-panel>
+
+

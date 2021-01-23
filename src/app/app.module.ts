@@ -18,30 +18,37 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {ModalRegleComponent} from './modal-regle/modal-regle.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlateauComponent,
+    ModalRegleComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatSidenavModule,
-        MatGridListModule,
-        MatCardModule,
-        MatButtonModule,
-        MatMenuModule,
-        MatIconModule,
-        MatToolbarModule,
-        MatRadioModule,
-        FormsModule,
-        MatRippleModule,
-        MatTooltipModule,
-        MatSlideToggleModule,
-        MatSnackBarModule
-    ],
-  bootstrap: [AppComponent]
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatGridListModule,
+    MatCardModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatRadioModule,
+    FormsModule,
+    MatRippleModule,
+    MatTooltipModule,
+    MatSlideToggleModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatExpansionModule
+  ],
+  bootstrap: [AppComponent],
+  entryComponents: [ModalRegleComponent]
 })
 export class AppModule { }

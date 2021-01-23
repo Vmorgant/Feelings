@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import {ModalRegleComponent} from './modal-regle/modal-regle.component';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,14 @@ import {Component} from '@angular/core';
 export class AppComponent {
   title = 'Feelings';
   typeCarte = 'Souris';
-  constructor() {
+  constructor(private dialog: MatDialog) {
+  }
+
+  afficherRegles() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(ModalRegleComponent, dialogConfig);
   }
 }
 
